@@ -76,7 +76,7 @@ jobs:
         with:
           context: .
           push: ${{ github.event_name != 'pull_request' }}
-          tags: gitea.knotding.com/knot/diffusion-wth-ui:latest
+          tags: ${{ env.REGISTRY }}/${{ secrets.USERNAME }}/${{ github.repository }}:latest
           labels: ${{ steps.meta.outputs.labels }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
